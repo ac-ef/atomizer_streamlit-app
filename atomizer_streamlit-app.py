@@ -156,20 +156,21 @@ Di seguito la notizia da analizzare:
 response = model.generate_content(prompt)
 
 # Pulsante per generare il testo
-if st.button("✨ Genera Atomic Essay!") and password.lower() == PASSWORD_CHECK:
-    st.markdown("---")  # Separatore per evidenziare l'output
-    st.subheader("📝 Risultato Generato")
-    st.markdown(response.text)
-
-    ############################################################### Spazio extra
-    st.markdown("<div class='spacer'></div>", unsafe_allow_html=True)
-
-    # Tab per mostrare il prompt generato
-    with st.expander("📜 Mostra il prompt utilizzato"):
-        st.code(prompt, language="text")
-else:
-    st.write("Parola d'ordine errata!")
-
+if st.button("✨ Genera Atomic Essay!"):
+    if password.lower() == PASSWORD_CHECK:
+        st.markdown("---")  # Separatore per evidenziare l'output
+        st.subheader("📝 Risultato Generato")
+        st.markdown(response.text)
+    
+        ############################################################### Spazio extra
+        st.markdown("<div class='spacer'></div>", unsafe_allow_html=True)
+    
+        # Tab per mostrare il prompt generato
+        with st.expander("📜 Mostra il prompt utilizzato"):
+            st.code(prompt, language="text")
+    else:
+        st.write("Parola d'ordine errata!")
+    
 ################################################################### Spazio extra
 st.markdown("<div class='spacer'></div>", unsafe_allow_html=True)
 
