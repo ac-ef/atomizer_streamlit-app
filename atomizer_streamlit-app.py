@@ -1,8 +1,8 @@
 import streamlit as st
 import google.generativeai as genai
 
-GOOGLE_API_KEY = st.secrets("GOOGLE_API_KEY")
-PASSWORD_CHECK = st.secrets("PASSWORD_CHECK")
+GOOGLE_API_KEY = st.secrets["GOOGLE_API_KEY"]
+PASSWORD_CHECK = st.secrets["PASSWORD_CHECK"]
 
 genai.configure(api_key=GOOGLE_API_KEY)
 
